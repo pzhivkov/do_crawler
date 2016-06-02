@@ -16,15 +16,15 @@ def read_page(url: str) -> HTTPResponse:
     """
     try:
         html_content = urlopen(url)
-    except URLError as _:
-        print("")
+    except URLError as e:
+        print(e.reason)
         return None
     except ValueError as e:
         print("Bad URL: " + str(e))
         return None
 
     assert isinstance(html_content, HTTPResponse)
-    if html_content.info().get_content_type() != "text/html":
+    if html_content.info().get_content_type() != 'text/html':
         return None
 
     return html_content
@@ -33,7 +33,7 @@ def read_page(url: str) -> HTTPResponse:
 def get_outgoing_links(page):
     links = []
     try:
-        bs_obj = BeautifulSoup(page, "html.parser")
+        bs_obj = BeautifulSoup(page, 'html.parser')
     except bs4.FeatureNotFound:
         pass
     else:
@@ -44,10 +44,11 @@ def get_outgoing_links(page):
 
 
 def main():
-    html = read_page("http://cnn.com")
-    print(html.read())
-    print(get_outgoing_links(html))
+    html_resp = read_page('http://cnn.com')
+    if html_resp:
+        html = html_resp.read()
+        print(get_outgoing_links(html))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
