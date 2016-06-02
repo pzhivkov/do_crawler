@@ -1,16 +1,46 @@
 import hashlib
 
+from urllib.parse import urlparse
+
 
 # --- Site map helper funcs:
 
 
 def compute_page_hash(content: str) -> str:
-    """
-    Generate a page content hash to detect duplicate pages.
-    """
-    utf8_content = str.encode('utf-8')
+    """Generate a page content hash to detect duplicate pages."""
+    utf8_content = content.encode('utf-8')
     sha = hashlib.sha224(utf8_content)
     return sha.hexdigest()
+
+
+def _get_relative_url(url: str) -> str:
+    """Return the relative part of a URL."""
+    return urlparse(url)[2]
+
+
+# --- Page:
+
+
+class Page(object):
+    """
+    A page structure holding information about a given page's URL,
+    hash code, static assets, and forward links.
+    """
+
+    def __init__(self, url: str, page_hash: str, static_assets: set, links: set):
+        self.url = url
+        self.page_hash = page_hash
+        self.static_assets = static_assets
+        self.links = links
+        self.alt_urls = set()
+
+        self._cleanup_links()
+
+    def _cleanup_links(self):
+        """Clean up forward links so they don't duplicate the base URL."""
+        for link in self.links:
+            self.links.remove(link)
+            self.links.add(_get_relative_url(link))
 
 
 # --- SiteMap:
@@ -18,19 +48,39 @@ def compute_page_hash(content: str) -> str:
 
 class SiteMap(object):
     """
-    A sitemap object that stores the currently generated sitemap.
+    A sitemap object that stores the currently generated sitemap:
+
+        - A dictionary of page urls to page structs.
+        - A dictionary of hash codes to page structs.
     """
 
     def __init__(self):
         self.pages = {}
         self._hashes = {}
 
-    def add_page(self, url: str, page_hash: str, static_assets: set, links: set):
-        self.pages[url] = (url, page_hash, static_assets, links)
-        self._hashes[hash] = self.pages[url]
+    def add_page(self, page: Page):
+        """Add a new page to the sitemap."""
 
-    def has_page(self):
-        pass
+        # Skip pages that are already in there.
+        if self.has_page(page.url):
+            return
+
+        # Check if we have the same hash and make the url point to the original entry.
+        if page.page_hash in self._hashes:
+            existing_page = self._hashes[page.page_hash]
+            self.pages[page.url] = existing_page
+
+            # Store the alternative URL in the page for future reference.
+            existing_page.alt_urls.add(page.url)
+            return
+
+        # This is a completely new page, add it.
+        self.pages[page.url] = page
+        self._hashes[hash] = self.pages[page.url]
+
+    def has_page(self, url: str) -> bool:
+        """Check if the sitemap already contains a page with a given URL."""
+        return url in self.pages
 
 
 # --- Main function:
