@@ -27,16 +27,41 @@ def _get_page(url: str) -> HTTPResponse:
 
 
 class PageFetcher(object):
+    """
+    A basic class that provides HTML resource download.
+    """
 
     def __init__(self, url: str):
-        self._url = url
-        self._response = _get_page(self._url)
-        if not self._response:
-            raise ValueError('Bad URL: ' + self._url)
+        self.url = url
+        self._response = _get_page(self.url)
+        if self._response:
+            self.response_url = self._response.geturl()
 
-        self._url = self._response.geturl()
+    def is_html(self) -> bool:
+        """Return whether the content type is HTML."""
+        return self._content_type() == 'text/html'
 
-        print(self._url)
+    def _content_type(self) -> str:
+        """Return the content type from the headers of the requested URL."""
+        if self.is_valid():
+            return self._response.info().get_content_type()
+        else:
+            return None
+
+    def is_valid(self) -> bool:
+        """Return whether the fetch was successful and resulted in a valid response."""
+        return bool(self._response)
+
+    @property
+    def content(self) -> bytes:
+        """
+        The page HTML content that can be parsed later.
+        :return: the content; None, if
+        """
+        if self.is_valid() and self.is_html():
+            return self._response.read()
+        else:
+            return None
 
 
 def main():
