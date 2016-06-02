@@ -8,7 +8,7 @@ from do_crawler.page_fetcher import PageFetcher
 class PageFetcherTests(unittest.TestCase):
 
     def setUp(self):
-        self.html_content = '<html></html>'
+        self.html_content = '<html>The content that we expect the PageFetcher to return.</html>'
 
         self.pf = PageFetcher('')
         self.pf._response = MagicMock()
