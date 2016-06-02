@@ -14,10 +14,10 @@ def _get_page(url: str) -> HTTPResponse:
     try:
         html_content = urlopen(url)
     except URLError as e:
-        print(e.reason)
+        # print(e.reason)
         return None
     except ValueError as e:
-        print("Bad URL: " + str(e))
+        # print("Bad URL: " + str(e))
         return None
 
     if not isinstance(html_content, HTTPResponse):
@@ -36,6 +36,8 @@ class PageFetcher(object):
         self._response = _get_page(self.url)
         if self._response:
             self.response_url = self._response.geturl()
+        else:
+            self.response_url = None
 
     def is_html(self) -> bool:
         """Return whether the content type is HTML."""
