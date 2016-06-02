@@ -194,6 +194,7 @@ def main():
     url = html_resp.geturl()
     html = html_resp.read()
     link_classifier = LinkClassifier(url, html)
+
     print(link_classifier.static_assets)
     print(link_classifier.same_domain_links)
 

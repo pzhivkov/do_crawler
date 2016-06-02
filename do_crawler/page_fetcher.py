@@ -3,6 +3,9 @@ from urllib.error import URLError
 from urllib.request import urlopen
 
 
+# --- Page fetcher helper functions:
+
+
 def _get_page(url: str) -> HTTPResponse:
     """
     Follow a URL and return an HTTP response if the content is a valid HTML page.
@@ -24,6 +27,9 @@ def _get_page(url: str) -> HTTPResponse:
         return None
 
     return html_content
+
+
+# --- PageFetcher:
 
 
 class PageFetcher(object):
@@ -66,9 +72,12 @@ class PageFetcher(object):
             return None
 
 
+# --- Main function:
+
+
 def main():
     pf = PageFetcher('http://www.cnn.com/asia/')
-    print(pf)
+    print(pf.content)
 
 if __name__ == '__main__':
     main()

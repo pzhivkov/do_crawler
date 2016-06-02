@@ -9,6 +9,7 @@ class PageFetcherTests(unittest.TestCase):
 
     def setUp(self):
         self.html_content = '<html></html>'
+
         self.pf = PageFetcher('')
         self.pf._response = MagicMock()
         content_type_mock = MagicMock()
