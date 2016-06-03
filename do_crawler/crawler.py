@@ -53,7 +53,8 @@ class Crawler(object):
 
         return pf.content
 
-    def start(self):
+    def crawl(self):
+        """Start the crawling process."""
         self.links_to_visit.add(self.root)
 
         while self.links_to_visit:
@@ -65,8 +66,11 @@ class Crawler(object):
 
 
 def main():
-    c = Crawler('https://digitalocean.com')
-    c.start()
+    c = Crawler('http://digitalocean.com')
+    try:
+        c.crawl()
+    except (KeyboardInterrupt, SystemExit) as e:
+        print(c.links_to_visit)
 
 
 if __name__ == '__main__':
