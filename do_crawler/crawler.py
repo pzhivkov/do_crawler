@@ -3,7 +3,6 @@ from do_crawler import (
     page_fetcher,
     sitemap
 )
-from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool
 
 
@@ -12,8 +11,11 @@ from multiprocessing.dummy import Pool as ThreadPool
 
 class Crawler(object):
     """The main crawler class."""
+    MAX_NUM_THREADS = 8
 
     def __init__(self, domain: str):
+        self.pool = ThreadPool(self.MAX_NUM_THREADS)
+
         self.root = domain
         self.links_to_visit = set()
         self.failed_links = set()
@@ -65,13 +67,12 @@ class Crawler(object):
             self._visit_link(link)
 
     def parallel_crawl(self):
-        pool = ThreadPool(8)
-
+        """Start a parallel crawl (multi-threaded version)."""
         self.links_to_visit.add('/')
         while self.links_to_visit:
-            links = self.links_to_visit.copy()
+            links = self.links_to_visit
             self.links_to_visit = set()
-            pool.map(self._visit_link, links)
+            self.pool.map(self._visit_link, links)
 
 
 # --- Main function:
@@ -82,6 +83,7 @@ def main():
     try:
         c.parallel_crawl()
     except (KeyboardInterrupt, SystemExit) as e:
+        c.pool.close()
         print(c.links_to_visit)
 
 

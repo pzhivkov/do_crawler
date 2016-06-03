@@ -191,9 +191,9 @@ class LinkClassifier(object):
 
 
 def main():
-    from do_crawler.crawler import read_page
+    from do_crawler.page_fetcher import _get_page
 
-    html_resp = read_page('http://cnn.com')
+    html_resp = _get_page('http://cnn.com')
     if not html_resp:
         return
 
