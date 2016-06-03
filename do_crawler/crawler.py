@@ -3,6 +3,8 @@ from do_crawler import (
     page_fetcher,
     sitemap
 )
+from multiprocessing import Pool
+from multiprocessing.dummy import Pool as ThreadPool
 
 
 # --- Crawler:
@@ -21,6 +23,7 @@ class Crawler(object):
     def _visit_link(self, url: str):
         """Visit a link and add it to the sitemap."""
 
+        url = link_classifier.absolutize_link(self.root, url)
         print('Visiting ' + url)
 
         # Make sure this link hasn't already been visited.
@@ -39,7 +42,7 @@ class Crawler(object):
         page = sitemap.Page(url, page_hash, cl.static_assets, cl.same_domain_links)
 
         self.sitemap.add_page(page)
-        self.links_to_visit |= cl.same_domain_links
+        self.links_to_visit |= page.links - self.sitemap.pages.keys()
 
     def _get_page_content(self, url: str) -> bytes:
         """Get the page content for a given URL."""
@@ -55,11 +58,20 @@ class Crawler(object):
 
     def crawl(self):
         """Start the crawling process."""
-        self.links_to_visit.add(self.root)
+        self.links_to_visit.add('/')
 
         while self.links_to_visit:
             link = self.links_to_visit.pop()
             self._visit_link(link)
+
+    def parallel_crawl(self):
+        pool = ThreadPool(8)
+
+        self.links_to_visit.add('/')
+        while self.links_to_visit:
+            links = self.links_to_visit.copy()
+            self.links_to_visit = set()
+            pool.map(self._visit_link, links)
 
 
 # --- Main function:
@@ -68,7 +80,7 @@ class Crawler(object):
 def main():
     c = Crawler('http://digitalocean.com')
     try:
-        c.crawl()
+        c.parallel_crawl()
     except (KeyboardInterrupt, SystemExit) as e:
         print(c.links_to_visit)
 

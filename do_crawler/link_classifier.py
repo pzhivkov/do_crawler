@@ -22,7 +22,7 @@ def _unquote_link(url: str) -> str:
     return re.sub(r"^\\'|\\'$|^\\\"|\\\"$", '', url)
 
 
-def _absolutize_link(domain: str, link: str) -> str:
+def absolutize_link(domain: str, link: str) -> str:
     """Make an absolute link from a URL and a relative link."""
     return urljoin(domain, link)
 
@@ -30,7 +30,7 @@ def _absolutize_link(domain: str, link: str) -> str:
 def _make_unique_root_url(url: str) -> str:
     """Make sure we point correctly to the root if this is a root URL."""
     if not urlparse(url)[2]:
-        return _absolutize_link(url, '/')
+        return absolutize_link(url, '/')
     return url
 
 
@@ -136,7 +136,7 @@ class LinkClassifier(object):
 
                 # Add a cleaned up version of the link.
                 link = _unquote_link(link)
-                abs_link = _absolutize_link(self.base_url, link)
+                abs_link = absolutize_link(self.base_url, link)
                 uniq_link = _make_unique_root_url(abs_link)
                 links.add(uniq_link)
 
