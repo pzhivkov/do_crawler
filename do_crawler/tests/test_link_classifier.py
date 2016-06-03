@@ -165,6 +165,22 @@ class LinkClassifierTests(unittest.TestCase):
         self.failUnlessEqual(classifier.same_domain_links, expected_same_domain_links)
         self.failUnlessEqual(classifier.external_links, expected_external_links)
 
+    def test_handle_misquoted_links(self):
+        """Handle links that have extra quotation marks."""
+        url = 'http://www.this.com/'
+        html = (
+            "<html><body>"
+            "<a href=\"\\'same1.link\\'\"/>"
+            "<a href='\\\"same2.link\\\"'/>"
+            "<body></html>"
+        )
+        expected_links = {
+            'http://www.this.com/same1.link',
+            'http://www.this.com/same2.link',
+        }
+        classifier = LinkClassifier(url, html)
+        self.failUnlessEqual(classifier._forward_links, expected_links)
+
 
 def main():
     unittest.main()

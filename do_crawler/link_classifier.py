@@ -19,7 +19,7 @@ def _url_has_http_scheme(url: str) -> bool:
 
 def _unquote_link(url: str) -> str:
     """Remove extra quotes on link, if any are present."""
-    return re.sub(r"^\\'|\\'$", '', url)
+    return re.sub(r"^\\'|\\'$|^\\\"|\\\"$", '', url)
 
 
 def _absolutize_link(domain: str, link: str) -> str:
