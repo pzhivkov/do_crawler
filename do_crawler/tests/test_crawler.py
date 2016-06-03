@@ -22,9 +22,9 @@ class CrawlerPartialTests(unittest.TestCase):
             "<a href='next.link'>"
             "<img src='img-src.link'>"
             "<body></html>"
-        ).encode('utf-8')
+        )
 
-        mock_get_page_content.side_effect = [bytes(html)]
+        mock_get_page_content.side_effect = [bytes(html, 'utf-8')]
 
         c = Crawler('http://test.domain')
         root = '/'
@@ -59,9 +59,9 @@ class CrawlerPartialTests(unittest.TestCase):
             "<a href='#'>"
             "<a href='//'>"
             "<body></html>"
-        ).encode('utf-8')
+        )
 
-        mock_get_page_content.side_effect = [bytes(html)]
+        mock_get_page_content.side_effect = [bytes(html, 'utf-8')]
 
         c = Crawler('http://test.domain')
         root = '/'
@@ -82,16 +82,16 @@ class CrawlerFullTests(unittest.TestCase):
             "<html><body>"
             "<a href='/next.link'>"
             "<body></html>"
-        ).encode('utf-8')
+        )
         html2 = (
             "<html><body>"
             "<a href='/'>"
             "<body></html>"
-        ).encode('utf-8')
+        )
 
         self.get_page_content_side_effect = [
-            bytes(html1),
-            bytes(html2)
+            bytes(html1, 'utf-8'),
+            bytes(html2, 'utf-8')
         ]
         self.crawler = Crawler('http://test.domain')
 

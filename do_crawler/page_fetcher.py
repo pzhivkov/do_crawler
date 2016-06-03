@@ -1,3 +1,5 @@
+import logging
+
 from functools import lru_cache
 from http.client import HTTPResponse
 from urllib.error import URLError
@@ -5,6 +7,9 @@ from urllib.request import (
     Request,
     urlopen
 )
+
+
+logger = logging.getLogger(__name__)
 
 
 # --- Page fetcher helper functions:
@@ -21,11 +26,11 @@ def _get_page(url: str) -> HTTPResponse:
     try:
         req = Request(url, headers={'User-Agent': 'do_crawler'})
         html_content = urlopen(req)
-    except URLError as _:
-        # log (e.reason)
+    except URLError as e:
+        logger.exception(e.reason)
         return None
-    except ValueError as _:
-        # log ("Bad URL: " + str(e))
+    except ValueError as e:
+        logger.exception("Bad URL: " + str(e))
         return None
 
     if not isinstance(html_content, HTTPResponse):

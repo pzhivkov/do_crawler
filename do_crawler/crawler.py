@@ -1,9 +1,14 @@
+import logging
+
 from do_crawler import (
     link_classifier,
     page_fetcher,
     sitemap
 )
 from multiprocessing.dummy import Pool as ThreadPool
+
+
+logger = logging.getLogger(__name__)
 
 
 # --- Crawler:
@@ -26,7 +31,7 @@ class Crawler(object):
         """Visit a link and add it to the sitemap."""
 
         url = link_classifier.absolutize_link(self.root, url)
-        print('Visiting ' + url)
+        logger.info('Visiting ' + url)
 
         # Make sure this link hasn't already been visited.
         if self.sitemap.has_page(url):

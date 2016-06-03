@@ -15,7 +15,7 @@ class SiteMapTests(unittest.TestCase):
         """Test page hash computation func."""
         from do_crawler.sitemap import compute_page_hash
 
-        content = bytes("<html>html content goes here</html>".encode('utf-8'))
+        content = bytes("<html>html content goes here</html>", 'utf-8')
         page_hash = compute_page_hash(content)
         expected_hash = '2b63f5a34821056f8effcee7c4ce00a001188846cdc5c4a6df64612c'
         self.failUnlessEqual(page_hash, expected_hash)
