@@ -111,7 +111,6 @@ class CrawlerFullTests(unittest.TestCase):
         self.failUnless(self.crawler.sitemap.has_page('/'))
         self.failUnless(self.crawler.sitemap.has_page('/next.link'))
 
-
     @patch('test_crawler.Crawler._get_page_content')
     def test_parallel_crawl(self, mock_get_page_content):
         """Test that a simple circular two page parallel crawl works per spec."""

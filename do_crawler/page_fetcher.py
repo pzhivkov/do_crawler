@@ -19,13 +19,13 @@ def _get_page(url: str) -> HTTPResponse:
     :rtype: HTTPResponse
     """
     try:
-        req = Request(url, headers={'User-Agent' : 'do_crawler'})
+        req = Request(url, headers={'User-Agent': 'do_crawler'})
         html_content = urlopen(req)
-    except URLError as e:
-        # print(e.reason)
+    except URLError as _:
+        # log (e.reason)
         return None
-    except ValueError as e:
-        # print("Bad URL: " + str(e))
+    except ValueError as _:
+        # log ("Bad URL: " + str(e))
         return None
 
     if not isinstance(html_content, HTTPResponse):

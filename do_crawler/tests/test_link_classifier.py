@@ -7,7 +7,7 @@ class LinkClassifierTests(unittest.TestCase):
 
     def test_has_bsobject(self):
         """Check that a valid classifier has a BS object."""
-        classifier = LinkClassifier('', '<html></html>')
+        classifier = LinkClassifier('', bytes('<html></html>', 'utf-8'))
         self.failUnless(classifier._bs_obj)
 
     def test_no_base_url(self):
@@ -15,7 +15,7 @@ class LinkClassifierTests(unittest.TestCase):
         # Create a classifier with no base url.
         given_url = 'http://given_url/'
         html = '<html></html>'
-        classifier = LinkClassifier(given_url, html)
+        classifier = LinkClassifier(given_url, bytes(html, 'utf-8'))
         self.failUnlessEqual(classifier.base_url, given_url)
 
     def test_incomplete_base_url(self):
@@ -23,14 +23,14 @@ class LinkClassifierTests(unittest.TestCase):
         # Create a classifier with an incomplete base url.
         given_url = 'http://given_url/'
         html = '<html><base></html>'
-        classifier = LinkClassifier(given_url, html)
+        classifier = LinkClassifier(given_url, bytes(html, 'utf-8'))
         self.failUnlessEqual(classifier.base_url, given_url)
 
     def test_base_url_is_well_terminated(self):
         """Test that the base URL explicitly specifies the root of the document."""
         given_url = 'http://given_url'
         html = '<html><</html>'
-        classifier = LinkClassifier(given_url, html)
+        classifier = LinkClassifier(given_url, bytes(html, 'utf-8'))
         self.failUnlessEqual(classifier.base_url, given_url + '/')
 
     def test_has_base_url(self):
@@ -38,7 +38,7 @@ class LinkClassifierTests(unittest.TestCase):
         # Create a classifier with a base url and compare it.
         base_url = 'http://base_url.com/index.html'
         html = "<html><head><base href='" + base_url + "'></head></html>"
-        classifier = LinkClassifier('http://not_this_base_url', html)
+        classifier = LinkClassifier('http://not_this_base_url', bytes(html, 'utf-8'))
         self.failUnlessEqual(classifier.base_url, base_url)
 
     def test_url_has_http_scheme(self):
@@ -63,7 +63,7 @@ class LinkClassifierTests(unittest.TestCase):
             "<script src='script-src.link'/>"
             "<body></html>"
         )
-        classifier = LinkClassifier(url, html)
+        classifier = LinkClassifier(url, bytes(html, 'utf-8'))
         expected_static_assets = {
             'http://www/link-href.css.link',
             'http://www/link-href.icon.link',
@@ -97,7 +97,7 @@ class LinkClassifierTests(unittest.TestCase):
             "<link href='link-href.search.link' rel='search'>"
             "<body></html>"
         )
-        classifier = LinkClassifier(url, html)
+        classifier = LinkClassifier(url, bytes(html, 'utf-8'))
         expected_links = {
             'http://www/a-href.link',
             'http://www/iframe-src.link',
@@ -128,13 +128,13 @@ class LinkClassifierTests(unittest.TestCase):
             "<a href='#'/>"
             "<body></html>"
         )
-        classifier = LinkClassifier(url, html)
+        classifier = LinkClassifier(url, bytes(html, 'utf-8'))
         self.failIf(classifier._forward_links)
 
     def test_is_same_domain_link(self):
         """Make sure that the classifier can distinguish same domain links from external links."""
         url = 'http://www.base_url.com'
-        classifier = LinkClassifier(url, '')
+        classifier = LinkClassifier(url, bytes('', 'utf-8'))
         self.failUnless(classifier._is_same_domain_link(url))
         self.failUnless(classifier._is_same_domain_link('http://www.base_url.com/some/weird/path/index.html'))
         self.failIf(classifier._is_same_domain_link('http://www.external.com'))
@@ -152,7 +152,7 @@ class LinkClassifierTests(unittest.TestCase):
             "<a href='//www.there.com/other2.link'/>"
             "<body></html>"
         )
-        classifier = LinkClassifier(url, html)
+        classifier = LinkClassifier(url, bytes(html, 'utf-8'))
         expected_same_domain_links = {
             'http://www.this.com/same1.link',
             'http://www.this.com/same2.link',
@@ -178,7 +178,7 @@ class LinkClassifierTests(unittest.TestCase):
             'http://www.this.com/same1.link',
             'http://www.this.com/same2.link',
         }
-        classifier = LinkClassifier(url, html)
+        classifier = LinkClassifier(url, bytes(html, 'utf-8'))
         self.failUnlessEqual(classifier._forward_links, expected_links)
 
 
