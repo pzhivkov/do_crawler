@@ -1,7 +1,10 @@
 from functools import lru_cache
 from http.client import HTTPResponse
 from urllib.error import URLError
-from urllib.request import urlopen
+from urllib.request import (
+    Request,
+    urlopen
+)
 
 
 # --- Page fetcher helper functions:
@@ -16,7 +19,8 @@ def _get_page(url: str) -> HTTPResponse:
     :rtype: HTTPResponse
     """
     try:
-        html_content = urlopen(url)
+        req = Request(url, headers={'User-Agent' : 'do_crawler'})
+        html_content = urlopen(req)
     except URLError as e:
         # print(e.reason)
         return None
