@@ -4,7 +4,7 @@ from do_crawler.crawler import Crawler
 from unittest.mock import patch
 
 
-class CrawlerTests(unittest.TestCase):
+class CrawlerPartialTests(unittest.TestCase):
 
     def test_crawler_keeps_root(self):
         url = 'http://root'
@@ -52,7 +52,7 @@ class CrawlerTests(unittest.TestCase):
 
     @patch('test_crawler.Crawler._get_page_content')
     def test_visit_duplicate_link(self, mock_get_page_content):
-        """Test that we don't visit a link twice."""
+        """Test that we don't schedule a link to be visited twice."""
         html = (
             "<html><body>"
             "<a href='/'>"
@@ -69,10 +69,60 @@ class CrawlerTests(unittest.TestCase):
 
         # Check that the root page is in the sitemap.
         self.failUnless(c.sitemap.has_page(root))
-        page = c.sitemap.pages[root]
 
         # Check that no forward links are added for the same page.
         self.failUnless(len(c.links_to_visit) == 0)
+
+
+class CrawlerFullTests(unittest.TestCase):
+
+    def setUp(self):
+        """Test that a simple circular two page crawl works per spec."""
+        html1 = (
+            "<html><body>"
+            "<a href='/next.link'>"
+            "<body></html>"
+        ).encode('utf-8')
+        html2 = (
+            "<html><body>"
+            "<a href='/'>"
+            "<body></html>"
+        ).encode('utf-8')
+
+        self.get_page_content_side_effect = [
+            bytes(html1),
+            bytes(html2)
+        ]
+        self.crawler = Crawler('http://test.domain')
+
+    def tearDown(self):
+        self.get_page_content_side_effect = None
+        self.crawler = None
+
+    @patch('test_crawler.Crawler._get_page_content')
+    def test_crawl(self, mock_get_page_content):
+        """Test that a simple circular two page crawl works per spec."""
+
+        mock_get_page_content.side_effect = self.get_page_content_side_effect
+
+        self.crawler.crawl()
+
+        self.failUnless(len(self.crawler.sitemap.pages) == 2)
+        self.failUnless(self.crawler.sitemap.has_page('/'))
+        self.failUnless(self.crawler.sitemap.has_page('/next.link'))
+
+
+    @patch('test_crawler.Crawler._get_page_content')
+    def test_parallel_crawl(self, mock_get_page_content):
+        """Test that a simple circular two page parallel crawl works per spec."""
+
+        mock_get_page_content.side_effect = self.get_page_content_side_effect
+
+        self.crawler.crawl()
+
+        self.failUnless(len(self.crawler.sitemap.pages) == 2)
+        self.failUnless(self.crawler.sitemap.has_page('/'))
+        self.failUnless(self.crawler.sitemap.has_page('/next.link'))
 
 
 def main():
