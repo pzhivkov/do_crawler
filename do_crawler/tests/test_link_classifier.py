@@ -160,6 +160,56 @@ class LinkClassifierTests(unittest.TestCase):
         self.failIf(classifier._is_same_domain_link('http://www.external.com'))
         self.failIf(classifier._is_same_domain_link('http://www.external.com/some/weird/path/index.html'))
 
+    def test_distinguish_forward_links_from_static_assets(self):
+        """ Make sure that the classifier can distinguish forward links from static assets. """
+
+        url = 'http://www.this.com/'
+        html = (
+            "<html><body>"
+            "<a href='a-href.link'/>"
+            "<iframe src='iframe-src.link'></iframe>"
+            "<form action='form-action.link'></form>"
+            "<blockquote cite='bloqkquote-cite.link'></blockquote>"
+            "<q cite='q-cite.link'></q>"
+            "<map name='map'><area href='area-href.link'/></map>"
+            "<link href='link-href.alt.link' rel='alternate'>"
+            "<link href='link-href.auth.link' rel='author'>"
+            "<link href='link-href.help.link' rel='help'>"
+            "<link href='link-href.lic.link' rel='license'>"
+            "<link href='link-href.next.link' rel='next'>"
+            "<link href='link-href.prev.link' rel='prev'>"
+            "<link href='link-href.search.link' rel='search'>"
+            "<link href='link-href.css.link' rel='stylesheet'>"
+            "<link href='link-href.icon.link' rel='icon'>"
+            "<link href='link-href.pf.link' rel='prefetch'>"
+            "<audio src='audio-src.link'/>"
+            "<video src='video-src.link' poster='video-poster.link'/>"
+            "<img src='img-src.link'>"
+            "<source src='source-src.link'>"
+            "<script src='script-src.link'/>"
+            "<body></html>"
+        )
+        classifier = LinkClassifier(url, bytes(html, 'utf-8'))
+        expected_static_assets = {
+            'http://www.this.com/audio-src.link', 'http://www.this.com/link-href.css.link',
+            'http://www.this.com/link-href.icon.link', 'http://www.this.com/link-href.pf.link',
+            'http://www.this.com/video-src.link', 'http://www.this.com/script-src.link',
+            'http://www.this.com/video-poster.link', 'http://www.this.com/source-src.link',
+            'http://www.this.com/img-src.link'
+        }
+        expected_forward_links = {
+            'http://www.this.com/iframe-src.link', 'http://www.this.com/bloqkquote-cite.link',
+            'http://www.this.com/q-cite.link', 'http://www.this.com/link-href.next.link',
+            'http://www.this.com/link-href.prev.link', 'http://www.this.com/form-action.link',
+            'http://www.this.com/link-href.auth.link', 'http://www.this.com/area-href.link',
+            'http://www.this.com/link-href.search.link', 'http://www.this.com/a-href.link',
+            'http://www.this.com/link-href.alt.link', 'http://www.this.com/link-href.lic.link',
+            'http://www.this.com/link-href.help.link'
+        }
+        
+        self.failUnlessEqual(classifier.static_assets, expected_static_assets)
+        self.failUnlessEqual(classifier._forward_links, expected_forward_links)
+
     def test_distinguish_external_from_same_domain_links(self):
         """ Make sure that the classifier can distinguish external from same-domain links. """
 

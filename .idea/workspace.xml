@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="913bdb97-bc40-4c83-9150-f936b55ec6f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_output.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/do_crawler/tests/test_link_classifier.py" afterPath="$PROJECT_DIR$/do_crawler/tests/test_link_classifier.py" />
     </list>
     <ignored path="do_crawler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,7 +21,7 @@
     <SUITE FILE_PATH="coverage/do_crawler$Unittests_in_test_link_classifier.coverage" NAME="Unittests in test_link_classifier Coverage Results" MODIFIED="1464917900296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/do_crawler/tests" />
     <SUITE FILE_PATH="coverage/do_crawler$page_fetcher.coverage" NAME="page_fetcher Coverage Results" MODIFIED="1464969001983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/do_crawler" />
     <SUITE FILE_PATH="coverage/do_crawler$crawl.coverage" NAME="crawl Coverage Results" MODIFIED="1464984780355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/do_crawler$All_unittests.coverage" NAME="All unittests Coverage Results" MODIFIED="1464985869381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/do_crawler$All_unittests.coverage" NAME="All unittests Coverage Results" MODIFIED="1464992348369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/do_crawler$Unittests_in_test_sitemap.coverage" NAME="Unittests in test_sitemap Coverage Results" MODIFIED="1464968902363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/do_crawler/tests" />
     <SUITE FILE_PATH="coverage/do_crawler$Unittests_in_test_crawler.coverage" NAME="Unittests in test_crawler Coverage Results" MODIFIED="1464971668599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/do_crawler/tests" />
     <SUITE FILE_PATH="coverage/do_crawler$link_classifier.coverage" NAME="link_classifier Coverage Results" MODIFIED="1464968998120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/do_crawler" />
@@ -41,7 +39,7 @@
       <file leaf-file-name="crawler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/do_crawler/crawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
+            <state relative-caret-position="-187">
               <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -74,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_link_classifier.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_link_classifier.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/do_crawler/tests/test_link_classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3060">
-              <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+            <state relative-caret-position="-412">
+              <caret line="208" column="8" selection-start-line="208" selection-start-column="8" selection-end-line="208" selection-end-column="8" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -101,7 +99,7 @@
       <file leaf-file-name="link_classifier.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/do_crawler/link_classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2865">
+            <state relative-caret-position="900">
               <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -110,10 +108,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
+            <state relative-caret-position="720">
               <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
@@ -123,7 +121,7 @@
       <file leaf-file-name="page_fetcher.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/do_crawler/page_fetcher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="105">
               <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -181,9 +179,9 @@
         <option value="$PROJECT_DIR$/do_crawler/sitemap_viz.py" />
         <option value="$PROJECT_DIR$/do_crawler/tests/test_sitemap.py" />
         <option value="$PROJECT_DIR$/do_crawler/tests/test_page_fetcher.py" />
-        <option value="$PROJECT_DIR$/do_crawler/tests/test_link_classifier.py" />
         <option value="$PROJECT_DIR$/do_crawler/tests/test_crawler.py" />
         <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/do_crawler/tests/test_link_classifier.py" />
       </list>
     </option>
   </component>
@@ -252,6 +250,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="do_crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="do_crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="do_crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="do_crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -719,21 +735,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_unittests - 2016.06.03 at 13h 17m 58s.xml">
-      <configuration name="All unittests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="All_unittests - 2016.06.03 at 13h 18m 05s.xml">
-      <configuration name="All unittests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="All_unittests - 2016.06.03 at 13h 19m 04s.xml">
-      <configuration name="All unittests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="All_unittests - 2016.06.03 at 13h 19m 43s.xml">
-      <configuration name="All unittests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="All_unittests - 2016.06.03 at 13h 21m 52s.xml">
-      <configuration name="All unittests" configurationId="tests" />
-    </history-entry>
     <history-entry file="All_unittests - 2016.06.03 at 13h 26m 14s.xml">
       <configuration name="All unittests" configurationId="tests" />
     </history-entry>
@@ -749,6 +750,21 @@
     <history-entry file="All_unittests - 2016.06.03 at 16h 31m 09s.xml">
       <configuration name="All unittests" configurationId="tests" />
     </history-entry>
+    <history-entry file="All_unittests - 2016.06.03 at 18h 03m 41s.xml">
+      <configuration name="All unittests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="All_unittests - 2016.06.03 at 18h 16m 53s.xml">
+      <configuration name="All unittests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="All_unittests - 2016.06.03 at 18h 17m 53s.xml">
+      <configuration name="All unittests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="All_unittests - 2016.06.03 at 18h 18m 13s.xml">
+      <configuration name="All unittests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="All_unittests - 2016.06.03 at 18h 19m 09s.xml">
+      <configuration name="All unittests" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -758,7 +774,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32010242" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32010242" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17525035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -949,16 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/do_crawler/page_fetcher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/do_crawler/tests/test_sitemap.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-447">
@@ -979,16 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/do_crawler/tests/test_link_classifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3060">
-          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/do_crawler/tests/test_crawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-117">
@@ -999,10 +995,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/do_crawler/crawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
+        <state relative-caret-position="-187">
           <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/do_crawler/page_fetcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
@@ -1011,7 +1025,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/do_crawler/link_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2865">
+        <state relative-caret-position="900">
           <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
@@ -1019,11 +1033,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/do_crawler/tests/test_link_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-412">
+          <caret line="208" column="8" selection-start-line="208" selection-start-column="8" selection-end-line="208" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
