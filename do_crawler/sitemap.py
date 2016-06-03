@@ -28,11 +28,10 @@ class Page(object):
     """
 
     def __init__(self, url: str, page_hash: str, static_assets: set, links: set):
-        self.url = _get_relative_url(url)
+        self.urls = [ _get_relative_url(url) ]
         self.page_hash = page_hash
         self.static_assets = static_assets
         self.links = links
-        self.alt_urls = set()
 
         self._cleanup_links()
 
@@ -62,22 +61,25 @@ class SiteMap(object):
     def add_page(self, page: Page):
         """Add a new page to the sitemap."""
 
+        url = next(iter(page.urls))
+        assert len(page.urls) == 1, "Incorrectly formed page."
+
         # Skip pages that are already in there.
-        if self.has_page(page.url):
+        if self.has_page(url):
             return
 
         # Check if we have the same hash and make the url point to the original entry.
         if page.page_hash in self._hashes:
             existing_page = self._hashes[page.page_hash]
-            self.pages[page.url] = existing_page
+            self.pages[url] = existing_page
 
             # Store the alternative URL in the page for future reference.
-            existing_page.alt_urls.add(page.url)
+            existing_page.urls.append(url)
             return
 
         # This is a completely new page, add it.
-        self.pages[page.url] = page
-        self._hashes[hash] = self.pages[page.url]
+        self.pages[url] = page
+        self._hashes[page.page_hash] = self.pages[url]
 
     def has_page(self, url: str) -> bool:
         """Check if the sitemap already contains a page with a given URL."""
