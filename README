@@ -1,0 +1,48 @@
+crawl
+-----
+
+
+USAGE
+-----
+
+usage: crawl [-h] [--version] [-v] [-o OUTPUT_FILE] DOMAIN_ROOT
+
+A crawler utility that builds a site map.
+
+Starts from a domain root and follows forward page links within the same domain,
+building a site map. Each record in the site map consisting of page urls for a given page, 'lists of forward links, and static assets.
+
+Examples:
+	crawl alisagaming.com -o alisagaming.txt
+
+positional arguments:
+  DOMAIN_ROOT
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -v, --verbose         Return self.verbose output.
+  -o OUTPUT_FILE, --output-file OUTPUT_FILE
+                        Specify a file to which the sitemap will be written.
+
+
+EXAMPLE:
+--------
+
+$ ./crawl.py alisagaming.com -v -o sample_output.txt
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/careers/senior-server-engineer-london-uk
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/careers/product-manager
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/careers/senior-cpp-game-developer-london
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/legal/privacy-policy
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/legal/terms-of-use
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/games/alisa-bingo
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/welcome
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/careers/senior-server-engineer-london-uk
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/careers/product-manager
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/careers/senior-cpp-game-developer-london
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/legal/privacy-policy
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/careers
+do_crawler.crawler: INFO     Visiting http://alisagaming.com/games/alisa-bingo
+$
+

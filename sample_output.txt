@@ -1,0 +1,114 @@
+Page: {'/careers/senior-server-engineer-london-uk'}
+    Links: {'/',
+     '/careers/senior-server-engineer-london-uk',
+     '/games/alisa-bingo',
+     '/legal/privacy-policy',
+     '/legal/terms-of-use'}
+    Static Assets: {'http://alisagaming.com/favicon.ico',
+     'http://alisagaming.com/scripts/site-bundle.js',
+     'http://fonts.googleapis.com/css?family=Abel:400|Source+Code+Pro:400,400italic,700normal,700italic,300,300italic',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/t/56ba75a5356fb040f0504a22/1460371523131/?format=1500w',
+     'http://use.typekit.net/ik/FQeo2L5baxatatmrW8SKGWQndts2OAw7gYqJrA-CFAwfezvffFHN4UJLFRbh52jhWD9hjcIaFQjoF2mKZRJUFhwo5eFcZAsKFUTliaiaOcBC-WFyZhBl-Ao1OcFzdPUyde8DjAiydA80ZkoRdhXCdeNRjAUGdaFXOeBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdP37OcBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdPJsj14ydcszdKu1ScNXZWFUiA9KgcmuScN3jPG4fOTbIMMjMPMfH6qJ0uMbMg6OJMJ7fbKv9gMMeMw6MKG4fOubIMMj2PMfH6qJl8MbMg6IJMJ7fbKa9gMMeMt6MKG4fOobIMMjgPMfH6qJzuMbMg6VJMJ7fbKt9gMMeMS6MKG4fO8bIMMjIPMfH6qJ3BMbMg64JMJ7fbRg9gMMegw6MKG4fH8oIMIjMkMfH6GJttjgIMIj2PMfH6qJ71qbMs6IJMJ7f6Rqy6IbMs65JMJ7fbKGpsMgeMS6MKGHf5AeMsMgegI6MTMgGvzXlb9.js'}
+
+Page: {'/careers/senior-cpp-game-developer-london'}
+    Links: {'/',
+     '/careers/senior-cpp-game-developer-london',
+     '/games/alisa-bingo',
+     '/legal/privacy-policy',
+     '/legal/terms-of-use'}
+    Static Assets: {'http://alisagaming.com/favicon.ico',
+     'http://alisagaming.com/scripts/site-bundle.js',
+     'http://fonts.googleapis.com/css?family=Abel:400|Source+Code+Pro:400,400italic,700normal,700italic,300,300italic',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/t/56ba75a5356fb040f0504a22/1460371523131/?format=1500w',
+     'http://use.typekit.net/ik/FQeo2L5baxatatmrW8SKGWQndts2OAw7gYqJrA-CFAwfezvffFHN4UJLFRbh52jhWD9hjcIaFQjoF2mKZRJUFhwo5eFcZAsKFUTliaiaOcBC-WFyZhBl-Ao1OcFzdPUyde8DjAiydA80ZkoRdhXCdeNRjAUGdaFXOeBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdP37OcBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdPJsj14ydcszdKu1ScNXZWFUiA9KgcmuScN3jPG4fOTbIMMjMPMfH6qJ0uMbMg6OJMJ7fbKv9gMMeMw6MKG4fOubIMMj2PMfH6qJl8MbMg6IJMJ7fbKa9gMMeMt6MKG4fOobIMMjgPMfH6qJzuMbMg6VJMJ7fbKt9gMMeMS6MKG4fO8bIMMjIPMfH6qJ3BMbMg64JMJ7fbRg9gMMegw6MKG4fH8oIMIjMkMfH6GJttjgIMIj2PMfH6qJ71qbMs6IJMJ7f6Rqy6IbMs65JMJ7fbKGpsMgeMS6MKGHf5AeMsMgegI6MTMgGvzXlb9.js'}
+
+Page: {'/legal/privacy-policy'}
+    Links: {'/legal/terms-of-use', '/', '/legal/privacy-policy'}
+    Static Assets: {'http://alisagaming.com/favicon.ico',
+     'http://alisagaming.com/scripts/site-bundle.js',
+     'http://fonts.googleapis.com/css?family=Abel:400|Source+Code+Pro:400,400italic,700normal,700italic,300,300italic',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/t/56ba75a5356fb040f0504a22/1460371523131/?format=1500w',
+     'http://use.typekit.net/ik/FQeo2L5baxatatmrW8SKGWQndts2OAw7gYqJrA-CFAwfezvffFHN4UJLFRbh52jhWD9hjcIaFQjoF2mKZRJUFhwo5eFcZAsKFUTliaiaOcBC-WFyZhBl-Ao1OcFzdPUyde8DjAiydA80ZkoRdhXCdeNRjAUGdaFXOeBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdP37OcBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdPJsj14ydcszdKu1ScNXZWFUiA9KgcmuScN3jPG4fOTbIMMjMPMfH6qJ0uMbMg6OJMJ7fbKv9gMMeMw6MKG4fOubIMMj2PMfH6qJl8MbMg6IJMJ7fbKa9gMMeMt6MKG4fOobIMMjgPMfH6qJzuMbMg6VJMJ7fbKt9gMMeMS6MKG4fO8bIMMjIPMfH6qJ3BMbMg64JMJ7fbRg9gMMegw6MKG4fH8oIMIjMkMfH6GJttjgIMIj2PMfH6qJ71qbMs6IJMJ7f6Rqy6IbMs65JMJ7fbKGpsMgeMS6MKGHf5AeMsMgegI6MTMgGvzXlb9.js'}
+
+Page: {'/careers'}
+    Links: {'/',
+     '/careers',
+     '/careers/product-manager',
+     '/careers/senior-cpp-game-developer-london',
+     '/careers/senior-server-engineer-london-uk',
+     '/legal/privacy-policy',
+     '/legal/terms-of-use'}
+    Static Assets: {'http://alisagaming.com/favicon.ico',
+     'http://alisagaming.com/scripts/site-bundle.js',
+     'http://fonts.googleapis.com/css?family=Abel:400|Source+Code+Pro:400,400italic,700normal,700italic,300,300italic',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/t/56ba75a5356fb040f0504a22/1460371523131/?format=1500w',
+     'http://use.typekit.net/ik/FQeo2L5baxatatmrW8SKGWQndts2OAw7gYqJrA-CFAwfezvffFHN4UJLFRbh52jhWD9hjcIaFQjoF2mKZRJUFhwo5eFcZAsKFUTliaiaOcBC-WFyZhBl-Ao1OcFzdPUyde8DjAiydA80ZkoRdhXCdeNRjAUGdaFXOeBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdP37OcBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdPJsj14ydcszdKu1ScNXZWFUiA9KgcmuScN3jPG4fOTbIMMjMPMfH6qJ0uMbMg6OJMJ7fbKv9gMMeMw6MKG4fOubIMMj2PMfH6qJl8MbMg6IJMJ7fbKa9gMMeMt6MKG4fOobIMMjgPMfH6qJzuMbMg6VJMJ7fbKt9gMMeMS6MKG4fO8bIMMjIPMfH6qJ3BMbMg64JMJ7fbRg9gMMegw6MKG4fH8oIMIjMkMfH6GJttjgIMIj2PMfH6qJ71qbMs6IJMJ7f6Rqy6IbMs65JMJ7fbKGpsMgeMS6MKGHf5AeMsMgegI6MTMgGvzXlb9.js'}
+
+Page: {'/careers/product-manager'}
+    Links: {'/',
+     '/careers',
+     '/careers/product-manager',
+     '/games/alisa-bingo',
+     '/legal/privacy-policy',
+     '/legal/terms-of-use'}
+    Static Assets: {'http://alisagaming.com/favicon.ico',
+     'http://alisagaming.com/scripts/site-bundle.js',
+     'http://fonts.googleapis.com/css?family=Abel:400|Source+Code+Pro:400,400italic,700normal,700italic,300,300italic',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/t/56ba75a5356fb040f0504a22/1460371523131/?format=1500w',
+     'http://use.typekit.net/ik/FQeo2L5baxatatmrW8SKGWQndts2OAw7gYqJrA-CFAwfezvffFHN4UJLFRbh52jhWD9hjcIaFQjoF2mKZRJUFhwo5eFcZAsKFUTliaiaOcBC-WFyZhBl-Ao1OcFzdPUyde8DjAiydA80ZkoRdhXCdeNRjAUGdaFXOeBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdP37OcBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdPJsj14ydcszdKu1ScNXZWFUiA9KgcmuScN3jPG4fOTbIMMjMPMfH6qJ0uMbMg6OJMJ7fbKv9gMMeMw6MKG4fOubIMMj2PMfH6qJl8MbMg6IJMJ7fbKa9gMMeMt6MKG4fOobIMMjgPMfH6qJzuMbMg6VJMJ7fbKt9gMMeMS6MKG4fO8bIMMjIPMfH6qJ3BMbMg64JMJ7fbRg9gMMegw6MKG4fH8oIMIjMkMfH6GJttjgIMIj2PMfH6qJ71qbMs6IJMJ7f6Rqy6IbMs65JMJ7fbKGpsMgeMS6MKGHf5AeMsMgegI6MTMgGvzXlb9.js'}
+
+Page: {'/'}
+    Links: {'/',
+     '/careers/product-manager',
+     '/careers/senior-cpp-game-developer-london',
+     '/careers/senior-server-engineer-london-uk',
+     '/games/alisa-bingo',
+     '/legal/privacy-policy',
+     '/legal/terms-of-use',
+     '/welcome'}
+    Static Assets: {'http://alisagaming.com/favicon.ico',
+     'http://alisagaming.com/scripts/site-bundle.js',
+     'http://fonts.googleapis.com/css?family=Abel:400|Source+Code+Pro:400,400italic,700normal,700italic,300,300italic',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/t/56ba75a5356fb040f0504a22/1460371523131/?format=1500w',
+     'http://use.typekit.net/ik/FQeo2L5baxatatmrW8SKGWQndts2OAw7gYqJrA-CFAwfezvffFHN4UJLFRbh52jhWD9hjcIaFQjoF2mKZRJUFhwo5eFcZAsKFUTliaiaOcBC-WFyZhBl-Ao1OcFzdPUyde8DjAiydA80ZkoRdhXCdeNRjAUGdaFXOeBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdP37OcBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdPJsj14ydcszdKu1ScNXZWFUiA9KgcmuScN3jPG4fOTbIMMjMPMfH6qJ0uMbMg6OJMJ7fbKv9gMMeMw6MKG4fOubIMMj2PMfH6qJl8MbMg6IJMJ7fbKa9gMMeMt6MKG4fOobIMMjgPMfH6qJzuMbMg6VJMJ7fbKt9gMMeMS6MKG4fO8bIMMjIPMfH6qJ3BMbMg64JMJ7fbRg9gMMegw6MKG4fH8oIMIjMkMfH6GJttjgIMIj2PMfH6qJ71qbMs6IJMJ7f6Rqy6IbMs65JMJ7fbKGpsMgeMS6MKGHf5AeMsMgegI6MTMgGvzXlb9.js'}
+
+Page: {'/games/alisa-bingo'}
+    Links: {'/legal/terms-of-use', '/', '/legal/privacy-policy', '/games/alisa-bingo'}
+    Static Assets: {'http://alisagaming.com/favicon.ico',
+     'http://alisagaming.com/scripts/site-bundle.js',
+     'http://fonts.googleapis.com/css?family=Abel:400|Source+Code+Pro:400,400italic,700normal,700italic,300,300italic',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/56bcdb59044262c175e29923/56bce232f85082b0eecae65a/1455219423913/amazonappstore.png',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/56bcdb59044262c175e29923/56bce23386db432b6c46ee44/1455219389586/appleappstore.png',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/56bcdb59044262c175e29923/56bce23386db432b6c46ee46/1455219405672/googleplay.png',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/56bcdb59044262c175e29923/56bce29c62cd94cd12aba3cc/1455219444810/facebook.png',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/56bcdeddf8baf3c41a461613/56bcdede40261de5317adc68/1455218410671/1.jpg',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/56bcdeddf8baf3c41a461613/56bcdf1937013b9e0f220fec/1455218473165/3.jpg',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/56bcdeddf8baf3c41a461613/56bcdf1986db432b6c46d1fd/1455218487138/2.jpg',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/56bcdeddf8baf3c41a461613/56bcdf2837013b9e0f221078/1455218479957/4.jpg',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/56bcdeddf8baf3c41a461613/56bcdf2f37013b9e0f2210aa/1455218487338/5.jpg',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/t/56ba75a5356fb040f0504a22/1460371523131/?format=1500w',
+     'http://use.typekit.net/ik/FQeo2L5baxatatmrW8SKGWQndts2OAw7gYqJrA-CFAwfezvffFHN4UJLFRbh52jhWD9hjcIaFQjoF2mKZRJUFhwo5eFcZAsKFUTliaiaOcBC-WFyZhBl-Ao1OcFzdPUyde8DjAiydA80ZkoRdhXCdeNRjAUGdaFXOeBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdP37OcBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdPJsj14ydcszdKu1ScNXZWFUiA9KgcmuScN3jPG4fOTbIMMjMPMfH6qJ0uMbMg6OJMJ7fbKv9gMMeMw6MKG4fOubIMMj2PMfH6qJl8MbMg6IJMJ7fbKa9gMMeMt6MKG4fOobIMMjgPMfH6qJzuMbMg6VJMJ7fbKt9gMMeMS6MKG4fO8bIMMjIPMfH6qJ3BMbMg64JMJ7fbRg9gMMegw6MKG4fH8oIMIjMkMfH6GJttjgIMIj2PMfH6qJ71qbMs6IJMJ7f6Rqy6IbMs65JMJ7fbKGpsMgeMS6MKGHf5AeMsMgegI6MTMgGvzXlb9.js'}
+
+Page: {'/legal/terms-of-use'}
+    Links: {'/legal/terms-of-use', '/', '/legal/privacy-policy'}
+    Static Assets: {'http://alisagaming.com/favicon.ico',
+     'http://alisagaming.com/scripts/site-bundle.js',
+     'http://fonts.googleapis.com/css?family=Abel:400|Source+Code+Pro:400,400italic,700normal,700italic,300,300italic',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/t/56ba75a5356fb040f0504a22/1460371523131/?format=1500w',
+     'http://use.typekit.net/ik/FQeo2L5baxatatmrW8SKGWQndts2OAw7gYqJrA-CFAwfezvffFHN4UJLFRbh52jhWD9hjcIaFQjoF2mKZRJUFhwo5eFcZAsKFUTliaiaOcBC-WFyZhBl-Ao1OcFzdPUyde8DjAiydA80ZkoRdhXCdeNRjAUGdaFXOeBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdP37OcBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdPJsj14ydcszdKu1ScNXZWFUiA9KgcmuScN3jPG4fOTbIMMjMPMfH6qJ0uMbMg6OJMJ7fbKv9gMMeMw6MKG4fOubIMMj2PMfH6qJl8MbMg6IJMJ7fbKa9gMMeMt6MKG4fOobIMMjgPMfH6qJzuMbMg6VJMJ7fbKt9gMMeMS6MKG4fO8bIMMjIPMfH6qJ3BMbMg64JMJ7fbRg9gMMegw6MKG4fH8oIMIjMkMfH6GJttjgIMIj2PMfH6qJ71qbMs6IJMJ7f6Rqy6IbMs65JMJ7fbKGpsMgeMS6MKGHf5AeMsMgegI6MTMgGvzXlb9.js'}
+
+Page: {'/welcome'}
+    Links: {'/',
+     '/careers/product-manager',
+     '/careers/senior-cpp-game-developer-london',
+     '/careers/senior-server-engineer-london-uk',
+     '/games/alisa-bingo',
+     '/legal/privacy-policy',
+     '/legal/terms-of-use',
+     '/welcome'}
+    Static Assets: {'http://alisagaming.com/favicon.ico',
+     'http://alisagaming.com/scripts/site-bundle.js',
+     'http://fonts.googleapis.com/css?family=Abel:400|Source+Code+Pro:400,400italic,700normal,700italic,300,300italic',
+     'http://static1.squarespace.com/static/56ba756945bf217c98cfedb7/t/56ba75a5356fb040f0504a22/1460371523131/?format=1500w',
+     'http://use.typekit.net/ik/FQeo2L5baxatatmrW8SKGWQndts2OAw7gYqJrA-CFAwfezvffFHN4UJLFRbh52jhWD9hjcIaFQjoF2mKZRJUFhwo5eFcZAsKFUTliaiaOcBC-WFyZhBl-Ao1OcFzdPUyde8DjAiydA80ZkoRdhXCdeNRjAUGdaFXOeBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdP37OcBC-WFyZhBl-Ao1iaiaO1FUiABkZWF3jAF8OcFzdPJsj14ydcszdKu1ScNXZWFUiA9KgcmuScN3jPG4fOTbIMMjMPMfH6qJ0uMbMg6OJMJ7fbKv9gMMeMw6MKG4fOubIMMj2PMfH6qJl8MbMg6IJMJ7fbKa9gMMeMt6MKG4fOobIMMjgPMfH6qJzuMbMg6VJMJ7fbKt9gMMeMS6MKG4fO8bIMMjIPMfH6qJ3BMbMg64JMJ7fbRg9gMMegw6MKG4fH8oIMIjMkMfH6GJttjgIMIj2PMfH6qJ71qbMs6IJMJ7f6Rqy6IbMs65JMJ7fbKGpsMgeMS6MKGHf5AeMsMgegI6MTMgGvzXlb9.js'}
+
