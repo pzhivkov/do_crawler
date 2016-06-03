@@ -1,7 +1,6 @@
 import unittest
 
 from unittest.mock import MagicMock
-
 from do_crawler.page_fetcher import PageFetcher
 
 

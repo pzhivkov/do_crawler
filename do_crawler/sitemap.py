@@ -28,7 +28,7 @@ class Page(object):
     """
 
     def __init__(self, url: str, page_hash: str, static_assets: set, links: set):
-        self.urls = [ _get_relative_url(url) ]
+        self.urls = [_get_relative_url(url)]
         self.page_hash = page_hash
         self.static_assets = static_assets
         self.links = links

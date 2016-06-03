@@ -60,6 +60,7 @@ class Crawler(object):
 
     def crawl(self):
         """Start the crawling process."""
+
         self.links_to_visit.add('/')
 
         while self.links_to_visit:
@@ -68,8 +69,11 @@ class Crawler(object):
 
     def parallel_crawl(self):
         """Start a parallel crawl (multi-threaded version)."""
+
         self.links_to_visit.add('/')
         while self.links_to_visit:
+            # Move the existing links_to_visit set to a temp var, and empty it,
+            # so that it can be processed in parallel without interference.
             links = self.links_to_visit
             self.links_to_visit = set()
             self.pool.map(self._visit_link, links)

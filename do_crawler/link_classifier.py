@@ -137,8 +137,8 @@ class LinkClassifier(object):
                 # Add a cleaned up version of the link.
                 link = _unquote_link(link)
                 abs_link = absolutize_link(self.base_url, link)
-                uniq_link = _make_unique_root_url(abs_link)
-                links.add(uniq_link)
+                unique_link = _make_unique_root_url(abs_link)
+                links.add(unique_link)
 
         # Make sure we don't consider the base URL that we started from.
         if self.base_url in links:
