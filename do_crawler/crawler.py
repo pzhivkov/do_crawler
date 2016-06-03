@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 
 class Crawler(object):
-    """The main crawler class."""
+    """ The main crawler class implementing the traversal logic. """
     MAX_NUM_THREADS = 8
 
     def __init__(self, domain: str):
@@ -28,7 +28,7 @@ class Crawler(object):
         self.sitemap = sitemap.SiteMap()
 
     def _visit_link(self, url: str):
-        """Visit a link and add it to the sitemap."""
+        """ Visit a link and add it to the sitemap. """
 
         url = link_classifier.absolutize_link(self.root, url)
         logger.info('Visiting ' + url)
@@ -42,7 +42,7 @@ class Crawler(object):
             self._add_page_record(url, page_content)
 
     def _add_page_record(self, url: str, page_content: bytes):
-        """Build a page and add it to the current sitemap."""
+        """ Build a page and add it to the current sitemap. """
 
         page_hash = sitemap.compute_page_hash(page_content)
         cl = link_classifier.LinkClassifier(url, page_content)
@@ -52,7 +52,7 @@ class Crawler(object):
         self.links_to_visit |= page.links - self.sitemap.pages.keys()
 
     def _get_page_content(self, url: str) -> bytes:
-        """Get the page content for a given URL."""
+        """ Get the page content for a given URL. """
 
         pf = page_fetcher.PageFetcher(url)
 
@@ -64,7 +64,7 @@ class Crawler(object):
         return pf.content
 
     def crawl(self):
-        """Start the crawling process."""
+        """ Start the crawling process. """
 
         self.links_to_visit.add('/')
 
@@ -73,7 +73,7 @@ class Crawler(object):
             self._visit_link(link)
 
     def parallel_crawl(self):
-        """Start a parallel crawl (multi-threaded version)."""
+        """ Start a parallel crawl (multi-threaded version). """
 
         self.links_to_visit.add('/')
         while self.links_to_visit:

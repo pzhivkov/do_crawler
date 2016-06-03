@@ -27,10 +27,10 @@ def _get_page(url: str) -> HTTPResponse:
         req = Request(url, headers={'User-Agent': 'do_crawler'})
         html_content = urlopen(req)
     except URLError as e:
-        logger.exception(e.reason)
+        logger.warn(e.reason)
         return None
     except ValueError as e:
-        logger.exception("Bad URL: " + str(e))
+        logger.warn("Bad URL: " + str(e))
         return None
 
     if not isinstance(html_content, HTTPResponse):
@@ -56,18 +56,21 @@ class PageFetcher(object):
             self.response_url = None
 
     def is_html(self) -> bool:
-        """Return whether the content type is HTML."""
+        """ Return whether the content type is HTML. """
+
         return self._content_type() == 'text/html'
 
     def _content_type(self) -> str:
-        """Return the content type from the headers of the requested URL."""
+        """ Return the content type from the headers of the requested URL. """
+
         if self.is_valid():
             return self._response.info().get_content_type()
         else:
             return None
 
     def is_valid(self) -> bool:
-        """Return whether the fetch was successful and resulted in a valid response."""
+        """ Return whether the fetch was successful and resulted in a valid response. """
+
         return bool(self._response)
 
     @property

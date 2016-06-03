@@ -7,14 +7,16 @@ from urllib.parse import urlparse
 
 
 def compute_page_hash(content: bytes) -> str:
-    """Generate a page content hash to detect duplicate pages."""
+    """ Generate a page content hash to detect duplicate pages. """
+
     utf8_content = str(content).encode('utf-8')
     sha = hashlib.sha224(utf8_content)
     return sha.hexdigest()
 
 
 def _get_relative_url(url: str) -> str:
-    """Return the relative part of a URL."""
+    """ Return the relative part of a URL. """
+
     return urlparse(url)[2]
 
 
@@ -36,7 +38,8 @@ class Page(object):
         self._cleanup_links()
 
     def _cleanup_links(self):
-        """Clean up forward links so they don't duplicate the base URL."""
+        """ Clean up forward links so they don't duplicate the base URL. """
+
         clean_links = set()
         for link in self.links:
             clean_links.add(_get_relative_url(link))
@@ -59,7 +62,7 @@ class SiteMap(object):
         self._hashes = {}
 
     def add_page(self, page: Page):
-        """Add a new page to the sitemap."""
+        """ Add a new page to the sitemap. """
 
         url = next(iter(page.urls))
         assert len(page.urls) == 1, "Incorrectly formed page."
@@ -82,7 +85,8 @@ class SiteMap(object):
         self._hashes[page.page_hash] = self.pages[url]
 
     def has_page(self, url: str) -> bool:
-        """Check if the sitemap already contains a page with a given URL."""
+        """ Check if the sitemap already contains a page with a given URL. """
+
         return url in self.pages
 
 

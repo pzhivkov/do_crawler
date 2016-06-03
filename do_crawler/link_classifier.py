@@ -13,29 +13,34 @@ from urllib.parse import (
 
 
 def _url_has_http_scheme(url: str) -> bool:
-    """Check if a given URL has the HTTP scheme."""
+    """ Check if a given URL has the HTTP scheme. """
+
     return urlparse(url, 'http').scheme == 'http'
 
 
 def _unquote_link(url: str) -> str:
-    """Remove extra quotes on link, if any are present."""
+    """ Remove extra quotes on link, if any are present. """
+
     return re.sub(r"^\\'|\\'$|^\\\"|\\\"$", '', url)
 
 
 def absolutize_link(domain: str, link: str) -> str:
-    """Make an absolute link from a URL and a relative link."""
+    """ Make an absolute link from a URL and a relative link. """
+
     return urljoin(domain, link)
 
 
 def _make_unique_root_url(url: str) -> str:
-    """Make sure we point correctly to the root if this is a root URL."""
+    """ Make sure we point correctly to the root if this is a root URL. """
+
     if not urlparse(url)[2]:
         return absolutize_link(url, '/')
     return url
 
 
 def _get_domain(url: str) -> str:
-    """Extract the domain name from a URL."""
+    """ Extract the domain name from a URL. """
+
     return urlparse(url)[1]
 
 
@@ -183,7 +188,8 @@ class LinkClassifier(object):
         return {link for link in self._forward_links if self._is_same_domain_link(link)}
 
     def _is_same_domain_link(self, url) -> bool:
-        """Check whether a given link is in the same domain."""
+        """ Check whether a given link is in the same domain. """
+
         return _get_domain(url) == _get_domain(self.base_url)
 
 
