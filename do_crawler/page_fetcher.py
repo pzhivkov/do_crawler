@@ -1,3 +1,4 @@
+from functools import lru_cache
 from http.client import HTTPResponse
 from urllib.error import URLError
 from urllib.request import urlopen
@@ -61,13 +62,14 @@ class PageFetcher(object):
         return bool(self._response)
 
     @property
-    def content(self) -> bytes:
+    @lru_cache(maxsize=1)
+    def content(self) -> str:
         """
         The page HTML content that can be parsed later.
         :return: the content; None, if
         """
         if self.is_valid() and self.is_html():
-            return self._response.read()
+            return str(self._response.read())
         else:
             return None
 

@@ -38,9 +38,10 @@ class Page(object):
 
     def _cleanup_links(self):
         """Clean up forward links so they don't duplicate the base URL."""
+        clean_links = set()
         for link in self.links:
-            self.links.remove(link)
-            self.links.add(_get_relative_url(link))
+            clean_links.add(_get_relative_url(link))
+        self.links = clean_links
 
 
 # --- SiteMap:
