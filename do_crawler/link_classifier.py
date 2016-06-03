@@ -1,4 +1,5 @@
 import bs4
+import re
 
 from bs4 import BeautifulSoup
 from functools import lru_cache
@@ -14,6 +15,11 @@ from urllib.parse import (
 def _url_has_http_scheme(url: str) -> bool:
     """Check if a given URL has the HTTP scheme."""
     return urlparse(url, 'http').scheme == 'http'
+
+
+def _unquote_link(url: str) -> str:
+    """Remove extra quotes on link, if any are present."""
+    return re.sub(r"^\\'|\\'$", '', url)
 
 
 def _absolutize_link(domain: str, link: str) -> str:
@@ -125,14 +131,14 @@ class LinkClassifier(object):
                     if len(link_type) > 2 and tag['rel']:
                         if not set.intersection(set(tag['rel']), link_type[2]):
                             continue
-
-                    # Add a cleaned up version of the link.
-                    abs_link = _absolutize_link(self.base_url, link)
-                    uniq_link = _make_unique_root_url(abs_link)
-                    links.add(uniq_link)
-
                 except KeyError:
                     continue
+
+                # Add a cleaned up version of the link.
+                link = _unquote_link(link)
+                abs_link = _absolutize_link(self.base_url, link)
+                uniq_link = _make_unique_root_url(abs_link)
+                links.add(uniq_link)
 
         # Make sure we don't consider the base URL that we started from.
         if self.base_url in links:
