@@ -6,9 +6,9 @@ from urllib.parse import urlparse
 # --- Site map helper funcs:
 
 
-def compute_page_hash(content: str) -> str:
+def compute_page_hash(content: bytes) -> str:
     """Generate a page content hash to detect duplicate pages."""
-    utf8_content = content.encode('utf-8')
+    utf8_content = str(content).encode('utf-8')
     sha = hashlib.sha224(utf8_content)
     return sha.hexdigest()
 

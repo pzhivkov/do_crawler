@@ -67,7 +67,7 @@ class PageFetcher(object):
 
     @property
     @lru_cache(maxsize=1)
-    def content(self) -> str:
+    def content(self) -> bytes:
         """
         The page HTML content that can be parsed later.
         :return: the content; None, if

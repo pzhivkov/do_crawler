@@ -68,14 +68,14 @@ class LinkClassifier(object):
         ('link', 'href', {'icon', 'prefetch', 'stylesheet'})
     ]
 
-    def __init__(self, url: str, html_content: str):
+    def __init__(self, url: str, html_content: bytes):
         """
         The LinkClassifier constructor takes a string with the HTML content.
 
         :param url: the URL corresponding to the document (used to resolve relative links)
         :type url: str
         :param html_content: the content of the HTML document
-        :type html_content: str
+        :type html_content: bytes
         """
 
         try:

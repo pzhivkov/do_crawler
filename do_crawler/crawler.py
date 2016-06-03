@@ -28,19 +28,20 @@ class Crawler(object):
             return
 
         page_content = self._get_page_content(url)
-        self._add_page_record(url, page_content)
+        if page_content:
+            self._add_page_record(url, page_content)
 
-    def _add_page_record(self, url: str, page_content: str):
+    def _add_page_record(self, url: str, page_content: bytes):
         """Build a page and add it to the current sitemap."""
 
         page_hash = sitemap.compute_page_hash(page_content)
-        cl = link_classifier.LinkClassifier(url, str(page_content))
+        cl = link_classifier.LinkClassifier(url, page_content)
         page = sitemap.Page(url, page_hash, cl.static_assets, cl.same_domain_links)
 
         self.sitemap.add_page(page)
         self.links_to_visit |= cl.same_domain_links
 
-    def _get_page_content(self, url: str) -> str:
+    def _get_page_content(self, url: str) -> bytes:
         """Get the page content for a given URL."""
 
         pf = page_fetcher.PageFetcher(url)
