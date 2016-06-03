@@ -13,6 +13,7 @@ class SiteMapTests(unittest.TestCase):
 
     def test_compute_page_hash(self):
         """ Test page hash computation func. """
+
         from do_crawler.sitemap import compute_page_hash
 
         content = bytes("<html>html content goes here</html>", 'utf-8')
@@ -22,6 +23,7 @@ class SiteMapTests(unittest.TestCase):
 
     def test_get_relative_url(self):
         """ Test the get_relative_url func. """
+
         from do_crawler.sitemap import _get_relative_url
 
         url = "http://www.cnn.com/asia/interesting_articles_1023/foo.html"
@@ -30,6 +32,7 @@ class SiteMapTests(unittest.TestCase):
 
     def test_page_construction(self):
         """ Check that a page is properly constructed with all links correctly relativized. """
+
         url = "http://base.url/"
         page_hash = '1c593c303dc21157133543e88d5577a6b05719af1bba55fe8f10dc73'
         static_assets = {'http://asset1', 'http://asset2'}
@@ -43,6 +46,7 @@ class SiteMapTests(unittest.TestCase):
 
     def test_sitemap_add_page(self):
         """ Test that pages can be added to the SiteMap. """
+
         sm = SiteMap()
         p = Page('url', 'hash1', set(), set())
 
@@ -52,6 +56,7 @@ class SiteMapTests(unittest.TestCase):
 
     def test_sitemap_add_duplicate_page(self):
         """ Test that duplicate pages can't be added to the SiteMap. """
+
         sm = SiteMap()
         p1 = Page('url', 'hash1', set(), set())
         p2 = Page('url', 'hash2', set(), set())
@@ -63,6 +68,7 @@ class SiteMapTests(unittest.TestCase):
 
     def test_sitemap_add_duplicate_hash_page(self):
         """ Test that pages with the same url but with different hashes will be merged in the SiteMap. """
+
         sm = SiteMap()
         p1 = Page('url1', 'hash', set(), set())
         p2 = Page('url2', 'hash', set(), set())

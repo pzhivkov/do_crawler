@@ -19,7 +19,7 @@ def print_page(page: Page, file):
 
 
 def print_sitemap(sitemap: SiteMap, file=stdout):
-    """Generate a console dump of a site map."""
+    """ Generate a console dump of a site map. """
 
     for page in sitemap.pages.values():
         print_page(page, file)

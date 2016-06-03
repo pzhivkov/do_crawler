@@ -53,6 +53,7 @@ class CrawlerPartialTests(unittest.TestCase):
     @patch('test_crawler.Crawler._get_page_content')
     def test_visit_duplicate_link(self, mock_get_page_content):
         """ Test that we don't schedule a link to be visited twice. """
+
         html = (
             "<html><body>"
             "<a href='/'>"
@@ -78,6 +79,7 @@ class CrawlerFullTests(unittest.TestCase):
 
     def setUp(self):
         """ Test that a simple circular two page crawl works per spec. """
+
         html1 = (
             "<html><body>"
             "<a href='/next.link'>"

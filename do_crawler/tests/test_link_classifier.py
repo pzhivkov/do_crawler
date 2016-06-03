@@ -7,49 +7,61 @@ class LinkClassifierTests(unittest.TestCase):
 
     def test_has_bsobject(self):
         """ Check that a valid classifier has a BS object. """
+
         classifier = LinkClassifier('', bytes('<html></html>', 'utf-8'))
         self.failUnless(classifier._bs_obj)
 
     def test_no_base_url(self):
         """ Check that if the document contains no base URL, the given URL will be used. """
+
         # Create a classifier with no base url.
         given_url = 'http://given_url/'
         html = '<html></html>'
         classifier = LinkClassifier(given_url, bytes(html, 'utf-8'))
+
         self.failUnlessEqual(classifier.base_url, given_url)
 
     def test_incomplete_base_url(self):
         """ Check that a badly formed document base tag won't replace the given URL. """
+
         # Create a classifier with an incomplete base url.
         given_url = 'http://given_url/'
         html = '<html><base></html>'
         classifier = LinkClassifier(given_url, bytes(html, 'utf-8'))
+
         self.failUnlessEqual(classifier.base_url, given_url)
 
     def test_base_url_is_well_terminated(self):
         """ Test that the base URL explicitly specifies the root of the document. """
+
         given_url = 'http://given_url'
         html = '<html><</html>'
         classifier = LinkClassifier(given_url, bytes(html, 'utf-8'))
+
         self.failUnlessEqual(classifier.base_url, given_url + '/')
 
     def test_has_base_url(self):
         """ Test that classifier correctly finds the base URL in the document instead of the given one. """
+
         # Create a classifier with a base url and compare it.
         base_url = 'http://base_url.com/index.html'
         html = "<html><head><base href='" + base_url + "'></head></html>"
         classifier = LinkClassifier('http://not_this_base_url', bytes(html, 'utf-8'))
+
         self.failUnlessEqual(classifier.base_url, base_url)
 
     def test_url_has_http_scheme(self):
         """ Check that we can filter non-http scheme URLs. """
+
         from do_crawler.link_classifier import _url_has_http_scheme
+
         self.failIf(_url_has_http_scheme('data:img/jpeg;01234567890ABCDEF'))
         self.failUnless(_url_has_http_scheme('http://www.foo.com'))
         self.failUnless(_url_has_http_scheme('//index.html'))
 
     def test_static_asset_types(self):
         """ Test a sample HTML document containing all static assets types against an expected list. """
+
         url = 'http://www/'
         html = (
             "<html><body>"
@@ -75,10 +87,12 @@ class LinkClassifierTests(unittest.TestCase):
             'http://www/img-src.link',
             'http://www/script-src.link'
         }
+
         self.failUnlessEqual(classifier.static_assets, expected_static_assets)
 
     def test_forward_link_types(self):
         """ Test a sample HTML document containing all forward link types against an expected list. """
+
         url = 'http://www/'
         html = (
             "<html><body>"
@@ -113,10 +127,12 @@ class LinkClassifierTests(unittest.TestCase):
             'http://www/link-href.prev.link',
             'http://www/link-href.search.link',
         }
+
         self.failUnlessEqual(classifier._forward_links, expected_links)
 
     def test_forward_links_dont_include_base_url(self):
         """ Test that the forward links in a sample HTML document won't include the URL of the document. """
+
         url = 'http://www.base_url.com'
         html = (
             "<html><body>"
@@ -129,19 +145,24 @@ class LinkClassifierTests(unittest.TestCase):
             "<body></html>"
         )
         classifier = LinkClassifier(url, bytes(html, 'utf-8'))
+
         self.failIf(classifier._forward_links)
 
     def test_is_same_domain_link(self):
         """ Make sure that the classifier can distinguish same domain links from external links. """
+
         url = 'http://www.base_url.com'
         classifier = LinkClassifier(url, bytes('', 'utf-8'))
+
         self.failUnless(classifier._is_same_domain_link(url))
         self.failUnless(classifier._is_same_domain_link('http://www.base_url.com/some/weird/path/index.html'))
+
         self.failIf(classifier._is_same_domain_link('http://www.external.com'))
         self.failIf(classifier._is_same_domain_link('http://www.external.com/some/weird/path/index.html'))
 
     def test_distinguish_external_from_same_domain_links(self):
         """ Make sure that the classifier can distinguish external from same-domain links. """
+
         url = 'http://www.this.com/'
         html = (
             "<html><body>"
@@ -162,11 +183,13 @@ class LinkClassifierTests(unittest.TestCase):
             'http://www.that.com/other1.link',
             'http://www.there.com/other2.link'
         }
+
         self.failUnlessEqual(classifier.same_domain_links, expected_same_domain_links)
         self.failUnlessEqual(classifier.external_links, expected_external_links)
 
     def test_handle_misquoted_links(self):
         """ Handle links that have extra quotation marks. """
+
         url = 'http://www.this.com/'
         html = (
             "<html><body>"
@@ -179,6 +202,7 @@ class LinkClassifierTests(unittest.TestCase):
             'http://www.this.com/same2.link',
         }
         classifier = LinkClassifier(url, bytes(html, 'utf-8'))
+
         self.failUnlessEqual(classifier._forward_links, expected_links)
 
 
